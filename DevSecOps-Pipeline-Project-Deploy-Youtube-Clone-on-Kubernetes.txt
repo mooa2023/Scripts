@@ -296,6 +296,7 @@ eksctl create cluster --name virtualtechbox-cluster \
 
 5--Verify Cluster with below command
 $ kubectl get nodes
+$ kubectl get svc
 =============================================================================================================================================================================================
 [D] Integrate Prometheus with EKS and Import Grafana Monitoring Dashboard for Kubernetes
 1--Install Helm
