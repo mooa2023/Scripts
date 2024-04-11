@@ -262,7 +262,7 @@ $ promtool check config /etc/prometheus/prometheus.yml
 $ curl -X POST http://localhost:9090/-/reload
 
 8--On monitoring server go to $ cd /etc/prometheus/ & $ sudo nano prometheus.yml and add job for Jenkins
-- job_name: 'jenkins'
+- job_name: 'jenkins_job'
     metrics_path: '/prometheus'
     static_configs:
       - targets: ['IP-Address:8080']
