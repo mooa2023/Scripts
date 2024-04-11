@@ -253,7 +253,7 @@ $ sudo systemctl status grafana-server
 $ cd /etc/prometheus/, ls, $ sudo nano prometheus.yml and below the job of prometheus, add job for node exporter
   - job_name: 'node_exporter'
     static_configs:
-      - targets: ['IP-Address:9100']
+      - targets: ['prometheus server public IP-Address:9100']
 
 6--Check the indentatio of the prometheus config file with below command
 $ promtool check config /etc/prometheus/prometheus.yml
@@ -262,10 +262,10 @@ $ promtool check config /etc/prometheus/prometheus.yml
 $ curl -X POST http://localhost:9090/-/reload
 
 8--On monitoring server go to $ cd /etc/prometheus/ & $ sudo nano prometheus.yml and add job for Jenkins
-- job_name: 'jenkins'
-    metrics_path: '/prometheus'
-    static_configs:
-      - targets: ['IP-Address:8080']
+- job_name: 'jenkins_job'
+  metrics_path: '/prometheus'
+  static_configs:
+    - targets: ['jenkins server public IP-Address:8080']
 =============================================================================================================================================================================================
 [C] Create AWS EKS Cluster
 1--Install kubectl on Jenkins Server
